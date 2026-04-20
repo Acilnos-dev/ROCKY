@@ -211,7 +211,7 @@ class InterfazRocky(ctk.CTk):
 
         mensaje_bienvenida = "========================================\n" \
                              " [ROCKY] Sistema Central Iniciado...\n" \
-                             " Motor Neuronal: gemma4:e2b\n" \
+                             " Motor Neuronal: gemma4:e4b\n" \
                              " HUD Óptico J.A.R.V.I.S: En línea\n" \
                              " Arsenal: 8 Herramientas (Visión OCR)\n" \
                              "========================================\n\n"
@@ -262,10 +262,10 @@ class InterfazRocky(ctk.CTk):
     # ----------------------------
 
     def precalentar_cerebro(self):
-        self.escribir_en_pantalla("[SISTEMA]: Inicializando enlaces sinápticos gemma4:e2b...")
+        self.escribir_en_pantalla("[SISTEMA]: Inicializando enlaces sinápticos gemma4:e4b...")
         try:
             ollama.chat(
-                model='gemma4:e2b',
+                model='gemma4:e4b',
                 messages=[{'role': 'user', 'content': 'ping'}],
                 keep_alive="1m", 
                 options={"num_ctx": 2048}
@@ -468,7 +468,7 @@ class InterfazRocky(ctk.CTk):
         
         try:
             respuesta = ollama.chat(
-                model='gemma4:e2b', 
+                model='gemma4:e4b', 
                 messages=[sistema] + self.historial_mensajes,
                 tools=self.herramientas_para_ia, 
                 stream=False,
